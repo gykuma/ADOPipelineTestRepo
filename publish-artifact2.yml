@@ -1,0 +1,9 @@
+pool:
+  name: Hosted
+
+steps:
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: art2'
+  inputs:
+    PathtoPublish: $(Build.Repository.LocalPath)\artifacts\art2
+    ArtifactName: art2

@@ -1,0 +1,21 @@
+#trigger: none
+
+stages:
+- stage: Build
+  displayName: Build stage
+  jobs:  
+  - job: Build
+    displayName: Build job
+    pool: Hosted
+    steps:
+    - script: echo Hello, world! This is CI job
+      displayName: 'Run a one-line script'
+
+    - task: PublishPipelineArtifact@0
+      displayName: Create Artifact
+      inputs:
+        artifactName: dropart1
+        targetPath: $(Build.Repository.LocalPath)\artifacts\dropart1
+
+    - upload: $(Build.Repository.LocalPath)\artifacts\dropart2
+      artifact: dropart2

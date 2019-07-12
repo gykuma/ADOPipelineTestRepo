@@ -1,0 +1,73 @@
+variables:
+  pipelinename: pipeline2
+
+resources:
+  pipelines:
+  - pipeline: pipeline1
+    project: GykumaTestProj
+    source: pipeline1
+
+  - pipeline: pipeline2
+    project: GykumaTestProj
+    source: pipeline2
+
+  - pipeline: pipeline3
+    project: GykumaTestProj2
+    source: pipeline1
+
+  - pipeline: pipeline4
+    project: GykumaTestProj2
+    source: GykumaTestProj2_2
+
+  - pipeline: pipeline5
+    project: GykumaTestProj
+    source: pipeline3
+
+  builds:
+  - build: MyJenkins
+    type: Jenkins
+    connection: gykuma-jenk-3
+    source: rogoyal
+    version: 6
+
+jobs:
+  - job: download_build_artifacts
+    displayName: 'download all artifacts'
+
+    pool:
+      name: Hosted
+
+    steps:
+    - script: echo download all artifacts
+
+    - download: pipeline1
+      patterns: |
+        *.txt
+        *.dll
+
+    - download: pipeline2
+      artifact: art2
+
+    - download: pipeline3
+      artifact: prz2art1
+
+    - download: pipeline4
+
+    - download: pipeline5
+      artifact: dropart1
+
+    - download: pipeline5
+      artifact: dropart2
+      
+    - downloadBuild: MyJenkins2222
+
+    - powershell: gci $(Pipeline.Workspace) -r    
+
+  - job: download_specific_artifacts
+    displayName: download specific artifacts
+    pool:
+      name: Hosted
+    steps:
+    - script: echo download specific artifacts
+    - download: pipeline1
+      artifact: art1
