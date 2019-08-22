@@ -59,7 +59,7 @@ jobs:
     - download: pipeline5
       artifact: dropart2
       
-    - downloadBuild: MyJenkins2222
+    - downloadBuild: MyJenkins
 
     - powershell: gci $(Pipeline.Workspace) -r    
 
