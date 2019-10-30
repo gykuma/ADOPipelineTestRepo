@@ -8,11 +8,11 @@
 resources:
  pipelines:
    - pipeline: MyPipe
-     source: Test
+     source: pipe2
+     project: proj
      #trigger: true
 
-pool:
-  vmImage: 'ubuntu-latest'
+pool: 'default'
 
 steps:
 - script: echo Hello, world!
