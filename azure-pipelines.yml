@@ -10,7 +10,7 @@ resources:
    - pipeline: MyPipe
      source: pipe2
      project: proj
-     #trigger: true
+     trigger: true
 
 pool: 'default'
 
