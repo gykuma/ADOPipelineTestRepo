@@ -16,7 +16,7 @@ pool: 'default'
 
 steps:
 - script: echo Hello, world!
-  displayName: 'Run a one-line script'
+  displayName: 'Run a one-line script2'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
