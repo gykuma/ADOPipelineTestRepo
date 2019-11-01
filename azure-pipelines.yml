@@ -9,7 +9,7 @@ resources:
  pipelines:
    - pipeline: MyPipe
      source: Test
-     #trigger: true
+     trigger: true
 
 pool: 'default'
 
