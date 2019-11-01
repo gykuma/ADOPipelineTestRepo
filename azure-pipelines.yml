@@ -8,9 +8,9 @@
 resources:
  pipelines:
    - pipeline: MyPipe
-     source: pipe2
+     source: Test
      project: proj
-     trigger: true
+     #trigger: true
 
 pool: 'default'
 
