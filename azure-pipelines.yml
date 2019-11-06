@@ -1,15 +1,15 @@
-trigger: none
-resources:
-  containers:
-  - container: myACRContainer  
-    type: ACR
-    azureSubscription: gykuma-azrm
-    resourceGroup: gykuma-RG
-    registry: gykumaacr
-    repository: hello-world
-    trigger: 
-      tags:
-      - dev*
+# trigger: none
+# resources:
+#   containers:
+#   - container: myACRContainer  
+#     type: ACR
+#     azureSubscription: gykuma-azrm
+#     resourceGroup: gykuma-RG
+#     registry: gykumaacr
+#     repository: hello-world
+#     trigger: 
+#       tags:
+#       - dev*
 
 pool: 'default'
 
