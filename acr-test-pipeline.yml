@@ -10,7 +10,6 @@ resources:
     trigger: 
       tags:
       - dev*
-      - v1*
 
 pool: 'default'
 
