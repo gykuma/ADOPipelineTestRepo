@@ -7,10 +7,10 @@ resources:
     resourceGroup: gykuma-RG
     registry: gykumaacr
     repository: hello-world
-    trigger: 
-      tags:
-      - dev*
-      - v1*
+    # trigger: 
+    #   tags:
+    #   - dev*
+    #   - v1*
 
 pool: 'default'
 
